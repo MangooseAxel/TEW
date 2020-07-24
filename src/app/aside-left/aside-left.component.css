@@ -1,0 +1,31 @@
+#wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 9vw;
+  height: 100vh;
+  left: 1vw;
+  top: 0;
+}
+
+#categoryList {
+  text-decoration: none;
+}
+
+li {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: flex-start;
+  transition: 0.25s;
+}
+
+#categoryList li:hover,
+#categoryList li.active {
+  font-weight: bold;
+
+  background-color: lightgrey;
+  cursor: pointer;
+}
