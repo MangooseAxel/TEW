@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { DataService } from '../data.service';
 import { Category } from '../../assets/category';
+import { EventEmitter } from 'protractor';
+
 
 @Component({
   selector: 'app-aside-left',
@@ -8,7 +10,10 @@ import { Category } from '../../assets/category';
   styleUrls: ['./aside-left.component.css']
 })
 export class AsideLeftComponent implements OnInit {
+
   categories: Category[] = [];
+
+  @Input() activeCategory;
   constructor(private dataService: DataService) { }
 
   ngOnInit() {

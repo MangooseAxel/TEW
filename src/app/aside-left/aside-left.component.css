@@ -29,3 +29,10 @@ li {
   background-color: lightgrey;
   cursor: pointer;
 }
+
+.active {
+  font-weight: bold;
+
+  background-color: lightgrey;
+  cursor: pointer;
+}

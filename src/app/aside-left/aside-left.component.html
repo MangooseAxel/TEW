@@ -1,8 +1,13 @@
 <div id="wrapper">
   <ul id="categoryList">
-    <li class="active">All</li>
-    <li *ngFor="let category of categories">
-      {{category?.name}}
+    <li (click)="activeCategory = 'all'" [ngClass]="{'active': activeCategory == 'all'}" class="category">All</li>
+
+
+    <li (click)="activeCategory = categoryItem.name" [ngClass]="{'active': activeCategory == categoryItem.name}"
+      *ngFor="let categoryItem of categories">
+
+      {{categoryItem?.name}}
+
     </li>
   </ul>
 </div>
