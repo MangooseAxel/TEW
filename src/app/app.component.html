@@ -1,8 +1,7 @@
 <div class="wrapper">
   <app-header></app-header>
-  <!-- <app-aside-left [category]="category" (changeCategory)="changeCategory($event)"></app-aside-left> -->
-  <app-aside-left [activeCategory]="activeCategory"></app-aside-left>
+  <app-aside-left [activeCategory]="activeCategory" (eventHandle)="changeCategory($event)"></app-aside-left>
   <div class="container">
-    <app-card></app-card>
+    <app-card [activeCategory]="activeCategory"></app-card>
   </div>
 </div>

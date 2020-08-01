@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { DataService } from '../data.service';
 import { Product } from '../../assets/product';
 
@@ -9,11 +9,10 @@ import { Product } from '../../assets/product';
 })
 export class CardComponent implements OnInit {
   products: Product[] = [];
+  @Input() activeCategory;
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.dataService.sendGetRequest().subscribe((data:Product) => this.products = data["records"]);
   }
-
-
 }

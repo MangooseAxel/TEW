@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'TEW-app';
   activeCategory:string = 'all';
+
+  changeCategory(text: string): void {
+    this.activeCategory = text;
+  }
 }

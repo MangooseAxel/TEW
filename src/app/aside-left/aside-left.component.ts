@@ -1,7 +1,6 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../data.service';
 import { Category } from '../../assets/category';
-import { EventEmitter } from 'protractor';
 
 
 @Component({
@@ -14,6 +13,7 @@ export class AsideLeftComponent implements OnInit {
   categories: Category[] = [];
 
   @Input() activeCategory;
+  @Output() eventHandle = new EventEmitter();
   constructor(private dataService: DataService) { }
 
   ngOnInit() {

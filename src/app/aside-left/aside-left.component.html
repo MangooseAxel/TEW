@@ -1,9 +1,9 @@
 <div id="wrapper">
   <ul id="categoryList">
-    <li (click)="activeCategory = 'all'" [ngClass]="{'active': activeCategory == 'all'}" class="category">All</li>
+    <li (click)="eventHandle.emit('All')" [ngClass]="{'active': activeCategory == 'All'}" class="category">All</li>
 
 
-    <li (click)="activeCategory = categoryItem.name" [ngClass]="{'active': activeCategory == categoryItem.name}"
+    <li (click)="eventHandle.emit(categoryItem.name)" [ngClass]="{'active': activeCategory == categoryItem.name}"
       *ngFor="let categoryItem of categories">
 
       {{categoryItem?.name}}
