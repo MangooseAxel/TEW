@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../data.service';
 import { Product } from '../../assets/product';
 
@@ -10,10 +10,17 @@ import { Product } from '../../assets/product';
 export class CardComponent implements OnInit {
   @Input() activeCategoryId;
   @Input() productsInCategory;
+  @Input() productsInCart;
+  @Output() toCart = new EventEmitter();
+  selectedProduct: Product;
 
   ngOnInit() {
   }
 
+  togglePopUp(product: Product) {
+    document.getElementById('cardPopUp').classList.toggle('active');
+    this.selectedProduct = product;
+  }
 
 
 }

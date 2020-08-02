@@ -1,6 +1,6 @@
 <div class="cardWrapper">
   <h4 *ngIf="productsInCategory.length === 0">There's no items in this category.</h4>
-  <div class="card" *ngFor="let product of productsInCategory">
+  <div (click)="togglePopUp(product)" class="card" *ngFor="let product of productsInCategory">
     <img class="cardImg" src="https://image.zootlab.cz/cache2/scale/1908x2562/000/000/004/494/4494029.jpeg">
     <div class="cardText">
       <p class="title">{{product?.name}}</p>
@@ -8,4 +8,16 @@
       <p class="price">{{product?.price}} $</p>
     </div>
   </div>
-</div>
+
+  <div id="cardPopUp">
+    <div id="cardPopUpInner">
+      <div id="selectedProductImg"></div>
+      <div id="selectedProductContent">
+        <p class="title">{{selectedProduct?.name}}</p>
+        <p class="description">{{selectedProduct?.description}}</p>
+        <p class="price">{{selectedProduct?.price}} $</p>
+        <button (click)="toCart.emit(selectedProduct)" id="addToCart">Add to Cart</button>
+      </div>
+      <div (click)="togglePopUp(selectedProduct)" id="closePopUp"></div>
+    </div>
+  </div>

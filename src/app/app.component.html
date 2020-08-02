@@ -1,8 +1,10 @@
 <div class="wrapper">
-  <app-header></app-header>
-  <app-aside-left [activeCategory]="activeCategory" [categories]="categories" (eventHandle)="changeCategory($event)">
-  </app-aside-left>
   <div class="container">
-    <app-card [activeCategoryId]="activeCategoryId" [productsInCategory]="productsInCategory"></app-card>
+    <app-header [productsInCart]="productsInCart" (showCart)="showCart()"></app-header>
+    <app-aside-left [activeCategory]="activeCategory" [categories]="categories" (eventHandle)="changeCategory($event)">
+    </app-aside-left>
+    <app-card [activeCategoryId]="activeCategoryId" [productsInCategory]="productsInCategory"
+      [productsInCart]="productsInCart" (toCart)="addToCart($event)"></app-card>
   </div>
+  <app-cart [productsInCart]="productsInCart" [cartVisibility]="cartVisibility" (showCart)="showCart()"></app-cart>
 </div>

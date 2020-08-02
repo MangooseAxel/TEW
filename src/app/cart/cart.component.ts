@@ -2,15 +2,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from "../../assets/product"
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.css']
 })
-export class HeaderComponent implements OnInit {
 
+export class CartComponent implements OnInit {
   @Input() productsInCart: Product[];
+  @Input() cartVisibility: Boolean;
   @Output() showCart = new EventEmitter;
 
   ngOnInit(): void {
   }
+
 }

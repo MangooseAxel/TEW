@@ -15,7 +15,9 @@ export class AppComponent implements OnInit {
   activeCategoryId:number = -1;
   products: Product[] = [];
   productsInCategory: Product[] = [];
+  productsInCart: Product[] = [];
   categories: Category[] = [];
+  cartVisibility: Boolean = false;
 
   constructor(private dataService: DataService) {
   }
@@ -38,6 +40,15 @@ export class AppComponent implements OnInit {
         this.productsInCategory.push(element);
       }
     });
+  }
+
+   showCart(): void {
+    this.cartVisibility = !this.cartVisibility;
+  }
+
+  addToCart(product: Product): void {
+    this.productsInCart.push(product);
+    console.log(this.productsInCart);
   }
 
   ngOnInit() {

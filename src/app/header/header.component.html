@@ -10,5 +10,21 @@
   <form action="">
     <input type="text" name="search" id="">
   </form>
-  <div class="account">Alex</div>
+
+  <div id="headerIcons">
+    <div id="account">
+      <div id="accountImg"></div>
+      <div id="accountText">
+        Přihlášení
+      </div>
+    </div>
+
+    <div (click)="showCart.emit()" id="cart">
+      <div id="cartImg"></div>
+      <div id="cartText">
+        Nákupní košík
+      </div>
+    </div>
+  </div> <!-- headerIcons -->
+
 </Header>

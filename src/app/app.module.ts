@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CardComponent } from './card/card.component';
 import { AsideLeftComponent } from './aside-left/aside-left.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CardComponent,
-    AsideLeftComponent
+    AsideLeftComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+<div id="wrapper" [class.show]="cartVisibility">
+  <div (click)="showCart.emit()" id="close"></div>
+  <h1 id="title">Cart</h1>
+
+  <ul id="itemsList">
+    <li *ngFor="let item of productsInCart">
+      <div id="itemImg"></div>
+      <div id="itemContent">
+        <h4 id="itemTitle">
+          {{item.name}}
+        </h4>
+        <h5>1ks</h5>
+        <h4>{{item.price}} $</h4>
+      </div>
+    </li>
+  </ul>
+</div>
