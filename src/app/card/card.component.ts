@@ -8,11 +8,12 @@ import { Product } from '../../assets/product';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  products: Product[] = [];
-  @Input() activeCategory;
-  constructor(private dataService: DataService) { }
+  @Input() activeCategoryId;
+  @Input() productsInCategory;
 
   ngOnInit() {
-    this.dataService.sendGetRequest().subscribe((data:Product) => this.products = data["records"]);
   }
+
+
+
 }
