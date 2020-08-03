@@ -7,10 +7,10 @@
       <div id="itemImg"></div>
       <div id="itemContent">
         <h4 id="itemTitle">
-          {{item.name}}
+          {{item?.product.name}}
         </h4>
-        <h5>1ks</h5>
-        <h4>{{item.price}} $</h4>
+        <h5>{{item?.count}}</h5>
+        <h4>{{item?.price}} $</h4>
       </div>
     </li>
   </ul>

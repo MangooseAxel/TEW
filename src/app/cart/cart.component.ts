@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from "../../assets/product"
+import { ItemInCart } from '../../assets/itemInCart';
 
 @Component({
   selector: 'app-cart',
@@ -8,7 +8,7 @@ import { Product } from "../../assets/product"
 })
 
 export class CartComponent implements OnInit {
-  @Input() productsInCart: Product[];
+  @Input() productsInCart: ItemInCart[];
   @Input() cartVisibility: Boolean;
   @Output() showCart = new EventEmitter;
 
